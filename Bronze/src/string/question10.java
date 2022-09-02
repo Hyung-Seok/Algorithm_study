@@ -4,42 +4,36 @@ import java.util.Scanner;
 
 public class question10 {
 
-	static Scanner sc = new Scanner(System.in);
 	
 	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
 		
 		System.out.print("몇개 단어 입력할건가요? : ");
-		int count = 0;
 		int num = sc.nextInt();
+		int count = 0; // 그룹 단어 개수
 		
 		for(int i = 0; i < num; i++) {
-			if(check() == true) {
+			System.out.print("단어를 입력해주세요 : ");
+			String word = sc.next();
+			boolean check[] = new boolean[26];
+			boolean tmp = true;
+			
+			for(int j = 0; j < word.length(); j++) {
+				int index = word.charAt(j)-'a';
+				if(check[index]) {
+					if(word.charAt(j) != word.charAt(j-1)) {
+						tmp = false;
+						break;
+					}
+				}else {
+					check[index] = true;
+				}
+			}
+			if(tmp) {
 				count++;
 			}
 		}
-		System.out.println(count);
-	}
-	
-	public static boolean check() {
-		boolean[] check = new boolean[26];
-		int prev = 0;
-		System.out.print("단어를 입력해주세요 : ");
-		String str = sc.next();
-		
-		for(int i = 0; i < str.length(); i++) {
-			int now = str.charAt(i);
-			if(prev != now) {
-				if(check[now - 'a'] == false) {
-					check[now - 'a'] = true;
-					prev = now;
-				}else {
-					return false;
-				}
-			}else {
-				continue;
-			}
-		}
-		return true;
+		System.out.println("그룹 단어 : " + count + "개");
 	}
 }
 	
