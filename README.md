@@ -1,2 +1,3 @@
-# BackJoon_Algorithm_study
+# Algorithm_study
+
 코딩테스트 공부
