@@ -2,6 +2,7 @@ package Hash;
 
 import java.util.Arrays;
 
+// 완주하지 못한 선수
 public class question01 {
 
 	public String solution(String[] participant, String[] completion) {
