@@ -2,6 +2,7 @@ package basic_math1;
 
 import java.util.Scanner;
 
+// 부녀회장이 될테야
 public class question06 {
 
 	public static void main(String[] args) {
